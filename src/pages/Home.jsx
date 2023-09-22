@@ -9,7 +9,6 @@ const Home = () => {
   const [loading, setLoading] = useState();
   const [posts, setPosts] = useState([]);
 
-
   async function fetchProductData() {
     setLoading(true);
     try {
@@ -25,16 +24,15 @@ const Home = () => {
     setLoading(false);
   }
 
-
   useEffect(() => {
     fetchProductData();
   }, [])
   return (
     <div>
       {
-        loading ? <Spinner /> :
+        loading ? <Spinner/> :
           posts.length > 0 ?
-            (<div className='grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-cols-4 max-w-6xl p-2 mx-auto space-y-10 space-x-5 min-h-[80vh]'>
+            (<div className='grid lg:grid-cols-4 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl p-2 mx-auto space-y-10 space-x-5 min-h-[80vh]'>
               {
                 posts.map((post) => (
                   <Product key={post.id} post={post} />
@@ -52,3 +50,5 @@ const Home = () => {
 }
 
 export default Home;
+
+

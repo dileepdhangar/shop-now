@@ -24,7 +24,7 @@ const Product = ({ post }) => {
   return (
     <div className='flex flex-col items-center justify-between hover:scale-110
      translation duration-300 ease-in shadow hover:shadow-lg shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]
-     mt-1 gap-1 mt-10 ml-5 rounded-xl outline'>
+     mt-1 gap-1 p-4 mt-10 ml-5 rounded-xl outline'>
       <div>
         <p className='text-gray-700 font-semibold text-lg text-left 
         truncate w-40 '> {post.title.split(" ").slice(0,10).join(" ")+ "..."} </p>
@@ -43,7 +43,7 @@ const Product = ({ post }) => {
       </div>
 
       {
-        cart.some((p) => p.id == post.id) ?
+        cart.some((p) => p.id === post.id) ?
           (<button className='text-grey-700 border-2 border-grey-700 
           rounded-full font-semibold text-[12xl] p-1 px-3 uppercase 
           hover:bg-gray-700 hover:text-white 

@@ -15,20 +15,23 @@ const CartItem = ( {item , itemIndex}) => {
 
     <div> 
 
-      <div> 
+      <div className='flex flex-row justify-between'> 
 
-        <div> 
-          <img src= {item.image}/>
+        <div  className='h-180px'> 
+          <img src= {item.image} className='h-full w-full '/>
         </div>
-        <div> 
-          <h1> {item.title}</h1>
-          <h1> {item.description }</h1>
+       <div className='flex flex-col  items-center justify-between'>
+       <div className='w-40 text-gray-5600 font-normal text-[10px] text-left'> 
+          <h1 className='text-gray-700 font-semibold text-lg text-left 
+        truncate w-40 '> {item.title.split(" ").slice(0,10).join(" ")+ "..."}</h1>
+          <h1> {item.description.split(" ").slice(0,10).join(" ")+ "..." }</h1>
        </div>
-       <div> 
-          <p> {item.price} </p>
+       <div className='text-green-600 font-semibold'> 
+          <p> ₹{item.price * 82.97} </p>
        </div>
        <div onClick={removeFromCart}> 
-         <FcDeleteDatabase />
+         <FcDeleteDatabase  className='text-5xl'/>
+       </div>
        </div>
 
       </div>
